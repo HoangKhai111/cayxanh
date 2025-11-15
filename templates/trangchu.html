@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='trangchu.css') }}">
+  <script src="{{ url_for('static', filename='trangchu.js') }}" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <title>Quản lý cây xanh</title>
+</head>
+<body>
+  <div class="right">
+    <div class="dangnhap">
+      <img class="ava" src="{{ url_for('static', filename='ava.jpg') }}" alt="">
+    </div>
+    <div class="dangxuat">
+      <h3 style="display: flex;flex-direction: column;align-items: center;}">
+    Xin chào, {{ username }} <br>
+    <a href="/logout" style="color: red; text-decoration: none;">Đăng xuất</a>
+    </h3>
+    </div>
+    <div class="menu">
+      <ul>
+        <li onclick="window.location.href='/trangchu'"style="background-color:rgb(158 158 158 / 70%)">Bản đồ</li>
+        <li id="timkiem-btn">Tìm kiếm</li>
+        <div id="search-box" style="display: none; margin-left: 7px; margin-top: 5px;">
+          <input type="text" id="search-input" placeholder="Nhập từ khóa...">
+          <button id="search_act">Tìm kiếm</button>
+        </div>
+        <li onclick="window.location.href='/themdulieu'">Chức năng dữ liệu</li>
+        <li onclick="window.location.href='/locdulieu'">Lọc dữ liệu cây xanh</li>
+        <li onclick="window.location.href='/duhiemhoa'">Dự báo cây đổ</li>
+        <li onclick="window.location.href='/dulieuquanly'">Dữ liệu quản lý</li>            
+      </ul>
+    </div>
+  </div>
+
+  <div class="left">
+    <div id="map">
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.min.js"></script>
+      <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+    </div>
+
+    <div>
+      <p id="mouse-position">Tọa độ: </p>
+    </div>
+
+    <div class="hienthi">
+      <button class="toggle-loai1" id="toggle">🟢Tắt lớp 1</button>
+      <button class="toggle-loai2" id="toggle">🟡Tắt lớp 2</button>
+      <button class="toggle-loai3" id="toggle">🔴Tắt lớp 3</button>
+    </div>
+
+    <button onclick="toggleBang()" class="thechu">Mở dữ liệu</button>
+
+    <div id="left_left">
+      <div class="dulieu">
+        <div style="display: flex; justify-content: center;">
+          <button onclick="xuatCSV()" class="xuatcsv"> Xuất CSV</button>
+        </div>
+        <table id="bangCayXanh" border="1" style="margin-top: 10px; border-collapse: collapse; width: 100%;">
+          <thead>
+            <tr>
+              <th>FID</th>
+              <th>Loại cây</th>
+              <th>Tọa độ X</th>
+              <th>Tọa độ Y</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

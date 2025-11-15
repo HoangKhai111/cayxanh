@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dulieuquanly.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <title>Quản lý cây xanh</title>
+</head>
+<body>
+    <div class="right">
+    <div class="dangnhap">
+      <img class="ava" src="{{ url_for('static', filename='ava.jpg') }}" alt="">
+    </div>
+    <div class="dangxuat">
+      <h3 style="display: flex;flex-direction: column;align-items: center;}">
+    Xin chào, admin {{ username }} <br>
+    <a href="/logout" style="color: red; text-decoration: none;">Đăng xuất</a>
+    </h3>
+    </div>
+    <div class="menu">
+      <ul>
+        <li onclick="window.location.href='/trangchu'">Bản đồ</li>
+        <li onclick="window.location.href='/trangchu'">Tìm kiếm</li>
+        <li onclick="window.location.href='/themdulieu'" >Chức năng dữ liệu</li>
+        <li onclick="window.location.href='/locdulieu'">Lọc dữ liệu cây xanh</li>
+        <li onclick="window.location.href='/duhiemhoa'">Dự báo cây đổ</li>
+        <li onclick="window.location.href='/dulieuquanly'"style="background-color:rgb(158 158 158 / 70%)">Dữ liệu quản lý</li>            
+      </ul>
+    </div>
+    </div>
+    <div class="left">
+        <div id="map"></div>
+        <div class="hienthi">
+            <button class="toggle-loai2" id="toggle">🟡Tắt lớp 1</button>
+            <button class="toggle-loai3" id="toggle">🔴Tắt lớp 2</button>
+        </div>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.min.js"></script>
+        <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+        <div class="ketqua"> 
+   <button id="loadData" class ="button" >Tải Dữ Liệu</button>
+    <button id="downloadSelected" class = "button">Tải dữ liệu đã chọn</button>
+    <table id="treeTable" border="1">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="selectAll"> Chọn tất cả</th>
+                <th>FID2</th>
+                <th>Tọa độ X</th>
+                <th>Tọa độ Y</th>
+                <th>Loại cây</th>
+                <th>Tình trạng cây</th>
+                <th>Người phụ trách</th>
+                <th>Nội dung phụ trách</th>
+                <th>Ngày kiểm tra</th>
+            </tr>
+        </thead>
+        <tbody id="treeList">
+            <!-- Dữ liệu sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+    </div>
+    <script src="{{ url_for('static', filename='dulieuquanly.js') }}" defer></script>
+</body>
+</html>

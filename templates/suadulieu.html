@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='suadulieu.css') }}" />
+  <script src="{{ url_for('static', filename='suadulieu.js') }}" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Quản lý cây xanh</title>
+  <style>
+    button.sua {
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      position: absolute;
+      bottom: 50%;
+    }
+    button.sua:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="right">
+    <div class="dangnhap">
+      <img class="ava" src="{{ url_for('static', filename='ava.jpg') }}" alt="" />
+    </div>
+    <div class="dangxuat">
+      <h3 style="display: flex; flex-direction: column; align-items: center">
+        Xin chào, admin {{ username }} <br />
+        <a href="/logout" style="color: red; text-decoration: none;">Đăng xuất</a>
+      </h3>
+    </div>
+    <div class="menu">
+      <ul>
+        <li onclick="window.location.href='/trangchu'">Bản đồ</li>
+        <li onclick="window.location.href='/trangchu'">Tìm kiếm</li>
+        <li onclick="window.location.href='/themdulieu'" style="background-color: rgb(158 158 158 / 70%)">Chức năng dữ liệu</li>
+        <li onclick="window.location.href='/locdulieu'">Lọc dữ liệu cây xanh</li>
+        <li onclick="window.location.href='/duhiemhoa'">Dự báo cây đổ</li>
+        <li onclick="window.location.href='/dulieuquanly'">Dữ liệu quản lý</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="luachon">
+      <div style="display: flex">
+        <button class="motcay1" onclick="window.location.href='/themdulieu'">Thêm dữ liệu cây xanh</button>
+        <button class="motcay1" onclick="window.location.href='/themtuexcel'">Thêm dữ liệu từ Excel</button>
+        <button class="motcay1" onclick="window.location.href='/xoadulieu'">Xóa dữ liệu cây xanh</button>
+        <button class="motcay1" onclick="window.location.href='/suadulieu'" style="background-color: #36597eff;">Sửa dữ liệu cây xanh</button>
+      </div>
+    </div>
+
+    <div class="sua_data">
+      <form id="updateForm">
+        <!-- Cột 1 -->
+        <div>
+          <input type="number" id="fid" name="fid" required placeholder="FID (bắt buộc)" /><br /><br />
+          <input type="text" id="toadox" name="toadox" placeholder="Tọa độ X" /><br /><br />
+          <input type="text" id="toadoy" name="toadoy" placeholder="Tọa độ Y" /><br /><br />
+          <input type="text" id="loai" name="loai" placeholder="Mã sức khỏe" /><br /><br />
+        </div>
+
+        <!-- Cột 2 -->
+        <div>
+          <input type="text" id="masocay" name="masocay" placeholder="Mã số cây" /><br /><br />
+          <input type="text" id="loaicay" name="loaicay" placeholder="Loại cây" /><br /><br />
+          <input type="text" id="duongkinh" name="duongkinh" placeholder="Đường kính" /><br /><br />
+          <input type="text" id="chieucao" name="chieucao" placeholder="Chiều cao" /><br /><br />
+        </div>
+
+        <!-- Cột 3 -->
+        <div>
+          <input type="text" id="hientrang" name="hientrang" placeholder="Hiện trạng" /><br /><br />
+          <input type="text" id="maphanloai" name="maphanloai" placeholder="Mã phân loại" /><br /><br />
+          <input type="text" id="mahientrang" name="mahientrang" placeholder="Mã hiện trạng" /><br /><br />
+          <input type="text" id="maloaicay" name="maloaicay" placeholder="Mã loại cây" /><br /><br />
+        </div>
+
+        <!-- Cột 4 -->
+        <div>
+          <input type="text" id="vitri" name="vitri" placeholder="Vị trí" /><br /><br />
+          <input type="text" id="stt" name="stt" placeholder="Số thứ tự" /><br /><br />
+          <input type="text" id="matuyencay" name="matuyencay" placeholder="Mã tuyến cây" /><br /><br />
+          <input type="text" id="anhminhhoa" name="anhminhhoa" placeholder="Ảnh minh họa" /><br /><br />
+        </div>
+
+        <!-- Cột 5 -->
+        <div>
+          <input type="text" id="lichsucayb" name="lichsucayb" placeholder="Lịch sử cây" /><br /><br />
+          <input type="text" id="manhathau" name="manhathau" placeholder="Mã nhà thầu" /><br /><br />
+          <input type="text" id="mahopdongq" name="mahopdongq" placeholder="Mã hợp đồng" /><br /><br />
+          <input type="text" id="diachi" name="diachi" placeholder="Địa chỉ" /><br /><br />
+        </div>
+
+        <button type="submit" id="sua" class="sua">Cập nhật</button>
+      </form>
+
+      <div id="result" style="margin-top: 55px; font-weight: bold;"></div>
+    </div>
+  </div>
+</body>
+</html>

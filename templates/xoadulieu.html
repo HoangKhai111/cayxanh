@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='xoadulieu.css') }}">
+    <script src="{{ url_for('static', filename='xoadulieu.js') }}" defer></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+    <title>Quản lý cây xanh</title>
+</head>
+<body>
+  <div class="right">
+    <div class="dangnhap">
+      <img class="ava" src="{{ url_for('static', filename='ava.jpg') }}" alt="">
+    </div>
+    <div class="dangxuat">
+      <h3 style="display: flex;flex-direction: column;align-items: center;}">
+    Xin chào, admin {{ username }} <br>
+    <a href="/logout" style="color: red; text-decoration: none;">Đăng xuất</a>
+    </h3>
+    </div>
+    <div class="menu">
+      <ul>
+        <li onclick="window.location.href='/trangchu'">Bản đồ</li>
+        <li onclick="window.location.href='/trangchu'">Tìm kiếm</li>
+        <li onclick="window.location.href='/themdulieu'" style="background-color:rgb(158 158 158 / 70%)">Chức năng dữ liệu</li>
+        <li onclick="window.location.href='/locdulieu'">Lọc dữ liệu cây xanh</li>
+        <li onclick="window.location.href='/duhiemhoa'">Dự báo cây đổ</li>
+        <li onclick="window.location.href='/dulieuquanly'">Dữ liệu quản lý</li>            
+      </ul>
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="luachon">
+      <div style="display:flex">
+        <button class="motcay1" onclick="window.location.href='/themdulieu'" >Thêm dữ liệu cây xanh</button>
+        <button class="motcay1" onclick="window.location.href='/themtuexcel'">Thêm dữ liệu từ Excel</button>
+        <button class="motcay1" onclick="window.location.href='/xoadulieu'"style="background-color: #36597eff;">Xóa dữ liệu cây xanh</button>
+        <button class="motcay1" onclick="window.location.href='/suadulieu'">Sửa dữ liệu cây xanh</button>
+      </div>
+    </div>
+    <form id="deleteForm">
+        <label for="fid">Nhập FID của cây bạn muốn xóa:</label><br>
+        <input type="text" id="fid" name="fid" placeholder="VD: 1,2,3" required />
+        <button type="submit" class="xoa">Xóa cây</button>
+    </form>
+    <div id="result" style="margin-top: 20px; white-space: pre-wrap;"></div>
+    </div>
+</body>
+</html>

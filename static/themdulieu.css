@@ -1,0 +1,146 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.right{ 
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; 
+    background-color:#99b9ec ;
+}
+.ava {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+.dangxuat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.menu{
+    
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 5px;
+}
+.dangnhap {
+    display: flex;
+}
+.left{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+.luachon{
+    display: flex;
+    margin-top: 150px;
+    margin-left: 70px;
+    margin-bottom: 25px;
+}
+#themcay{
+    font-size: 14px;
+    margin: 0px 10px;
+    height: 35px;
+    width: 170px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+.them_data{
+    margin-left: 30px;
+}
+#them{
+    font-size: 18px;
+    margin: 0px 10px;
+    height: 35px;
+    width: 100px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 250px;
+    left: 43%;
+}
+input[type="text"] {
+    width: 270px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+p {
+    font-size: 16px;
+    margin: 10px 10px;
+    color: #333;
+}
+  .luachon {
+    margin: 20px;
+  }
+
+  .motcay1 {
+    padding: 12px 24px; /* Khoảng cách bên trong nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    color: white; /* Màu chữ */
+    background-color: #007BFF; /* Màu nền xanh dương */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển đổi */
+  }
+
+  .motcay1:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+  }
+
+  .motcay1:active {
+    transform: scale(0.95); /* Nhỏ lại nút khi nhấn */
+  }
+  li:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.02); /* Phóng to mục khi hover */
+  }
+  li:active {
+    transform: scale(0.98); /* Nhỏ lại mục khi nhấn */
+  }
+  

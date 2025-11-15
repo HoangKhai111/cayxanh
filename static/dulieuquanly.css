@@ -1,0 +1,211 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.right{ 
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; 
+    background-color:#99b9ec ;
+}
+.ava {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+.dangxuat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.menu{
+    
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 5px;
+}
+.dangnhap {
+    display: flex;
+}
+.left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    position: relative;
+}
+#map{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+}
+.hienthi {
+    z-index: 10;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.battat{
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.95);
+}
+#timkiem-btn {
+    cursor: pointer;
+}
+#search-box {
+    display: flex;
+}
+#search-input {
+    width: 250px;
+    height: 20px;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 7px;
+}
+#search_act {
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-left: 100px;
+}
+#mouse-position {
+    position: absolute;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+}
+.ketqua{
+    overflow-y: auto;
+    height: 100%;
+}
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #81c784;
+    --danger-color: #c62828;
+    --text-color: #263238;
+    --light-gray: #f5f5f5;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+.ketqua {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-height: -webkit-fill-available;
+}
+#toggle{
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 3px;
+    height: 30px;
+    width: 100px;
+    margin: 1px 0px;
+}
+.button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    color: white;
+}
+
+#loadData {
+    background-color: #4CAF50; /* Màu xanh cho nút Tải Dữ Liệu */
+}
+
+#loadData:hover {
+    background-color: #3e8e41; /* Màu xanh đậm khi hover */
+}
+
+#downloadSelected {
+    background-color: #2196F3; /* Màu xanh dương cho nút Tải dữ liệu đã chọn */
+}
+
+#downloadSelected:hover {
+    background-color: #0b7dda; /* Màu xanh dương đậm khi hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Màu nền cho các hàng chẵn */
+}
+
+tr:hover {
+    background-color: #e0e0e0; /* Màu nền khi hover hàng */
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+  li:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.02); /* Phóng to mục khi hover */
+  }
+  li:active {
+    transform: scale(0.98); /* Nhỏ lại mục khi nhấn */
+  }
+  

@@ -1,0 +1,197 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.right{ 
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; 
+    background-color:#99b9ec ;
+}
+.ava {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+.dangxuat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.menu{
+    
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 5px;
+}
+.dangnhap {
+    display: flex;
+}
+.left{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+.luachon{
+    display: flex;
+    margin-top: 150px;
+    margin-left: 70px;
+    margin-bottom: 40px;
+}
+.them_data {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#excelForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#excelFile {
+  display: none; /* Ẩn input file mặc định */
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #e9f5ff;
+  color: #007BFF;
+  border: 2px dashed #007BFF;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #d0e8ff;
+  transform: translateY(-2px);
+}
+
+.custom-file-upload i {
+  margin-right: 8px;
+}
+
+#them {
+  padding: 14px 28px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+#them:hover {
+  background-color: #0069d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+#them:active {
+  transform: translateY(0);
+}
+
+#them:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+/* Hiệu ứng khi có dữ liệu */
+#result.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+#result.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Style cho tên file khi chọn */
+.file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+  .luachon {
+    margin: 20px;
+  }
+
+  .motcay1 {
+    padding: 12px 24px; /* Khoảng cách bên trong nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    color: white; /* Màu chữ */
+    background-color: #007BFF; /* Màu nền xanh dương */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển đổi */
+  }
+
+  .motcay1:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+  }
+
+  .motcay1:active {
+    transform: scale(0.95); /* Nhỏ lại nút khi nhấn */
+  }
+  li:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.02); /* Phóng to mục khi hover */
+  }
+  li:active {
+    transform: scale(0.98); /* Nhỏ lại mục khi nhấn */
+  }

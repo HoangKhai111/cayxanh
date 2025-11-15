@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='duhiemhoa.css') }}">
+    <script src="{{ url_for('static', filename='duhiemhoa.js') }}" defer></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+    <title>Quản lý cây xanh</title>
+</head>
+<body>
+
+    <div class="right">
+    <div class="dangnhap">
+      <img class="ava" src="{{ url_for('static', filename='ava.jpg') }}" alt="">
+    </div>
+    <div class="dangxuat">
+      <h3 style="display: flex;flex-direction: column;align-items: center;}">
+    Xin chào, admin {{ username }} <br>
+    <a href="/logout" style="color: red; text-decoration: none;">Đăng xuất</a>
+    </h3>
+    </div>
+    <div class="menu">
+      <ul>
+        <li onclick="window.location.href='/trangchu'">Bản đồ</li>
+        <li onclick="window.location.href='/trangchu'">Tìm kiếm</li>
+        <li onclick="window.location.href='/themdulieu'" >Chức năng dữ liệu</li>
+        <li onclick="window.location.href='/locdulieu'">Lọc dữ liệu cây xanh</li>
+        <li onclick="window.location.href='/duhiemhoa'"style="background-color:rgb(158 158 158 / 70%)">Dự báo cây đổ</li>
+        <li onclick="window.location.href='/dulieuquanly'">Dữ liệu quản lý</li>            
+      </ul>
+    </div>
+    </div>
+    <div class="left">
+        <div id="map">
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <script src="{{ url_for('static', filename='duhiemhoa.js') }}" defer></script>
+        </div>
+        <div id = "left_left">
+        <div class="dulieu">
+        <div style="display: flex; justify-content: center;" ><button onclick="xuatCSV()"class="xuatcsv">⬇️Xuất CSV</button></div>
+        <table id="banghiemhoa" border="1" style="margin-top: 10px; border-collapse: collapse; width: 100%;">
+    <input type="hidden" id="iconUrl" value="{{ url_for('static', filename='chuy.png') }}">
+
+  <thead>
+    <tr>
+      <th>FID</th>
+      <th>Loại cây</th>
+      <th>Tọa độ X</th>
+      <th>Tọa độ Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+  </tbody>
+</table>
+    </div>
+    </div>
+    </div>
+</body>
+</html> 

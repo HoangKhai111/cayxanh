@@ -1,0 +1,204 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.right{ 
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; 
+    background-color:#99b9ec ;
+}
+.ava {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+.dangxuat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 36, 36);
+}
+.menu{
+    
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 5px;
+}
+.dangnhap {
+    display: flex;
+}
+.left{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+  .luachon {
+    margin: 20px;
+  }
+
+  .motcay1 {
+    padding: 12px 24px; /* Khoảng cách bên trong nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    color: white; /* Màu chữ */
+    background-color: #007BFF; /* Màu nền xanh dương */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển đổi */
+  }
+
+  .motcay1:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+  }
+
+  .motcay1:active {
+    transform: scale(0.95); /* Nhỏ lại nút khi nhấn */
+  }
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --danger-color: #c62828;
+            --danger-hover: #b71c1c;
+            --text-color: #263238;
+            --light-gray: #f5f5f5;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        #deleteForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: -15px;
+        }
+
+        input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(129, 199, 132, 0.3);
+        }
+
+        .xoa {
+            background-color: var(--danger-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .xoa:hover {
+            background-color: var(--danger-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #result {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            min-height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #deleteForm {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+  li:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.02); /* Phóng to mục khi hover */
+  }
+  li:active {
+    transform: scale(0.98); /* Nhỏ lại mục khi nhấn */
+  }
